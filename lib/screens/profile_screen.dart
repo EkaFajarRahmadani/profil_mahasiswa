@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/socialmedia_row.dart';
+import '../widgets/profile_actions.dart';
 import '../widgets/profile_info.dart';
 import '../widgets/profile_photo.dart';
+import '../widgets/socialmedia_row.dart';
 import 'about_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
+
+  void _openAboutScreen(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AboutScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,33 +43,10 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 20),
               const SocialMediaRow(),
               const SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.edit),
-                    label: const Text('Edit'),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.share),
-                    label: const Text('Bagikan'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AboutScreen(),
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.info_outline),
-                label: const Text('Tentang Aplikasi'),
+              ProfileActions(
+                onEdit: () {},
+                onShare: () {},
+                onAbout: () => _openAboutScreen(context),
               ),
             ],
           ),
