@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/profile_actions.dart';
+import '../widgets/action_button.dart';
 import '../widgets/profile_info.dart';
 import '../widgets/profile_photo.dart';
 import '../widgets/socialmedia_row.dart';

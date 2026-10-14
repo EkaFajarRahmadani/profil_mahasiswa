@@ -10,7 +10,10 @@ void main() {
     expect(find.text('Eka Fajar Rahmadani'), findsOneWidget);
     expect(find.text('Tentang Aplikasi'), findsOneWidget);
 
-    await tester.tap(find.text('Tentang Aplikasi'));
+    final aboutButton = find.text('Tentang Aplikasi').last;
+    await tester.ensureVisible(aboutButton);
+    await tester.pumpAndSettle();
+    await tester.tap(aboutButton);
     await tester.pumpAndSettle();
 
     expect(find.text('Tentang Aplikasi'), findsWidgets);
