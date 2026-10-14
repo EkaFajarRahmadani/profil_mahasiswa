@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ProfileActions extends StatelessWidget {
+class ActionButtons extends StatelessWidget {
   final VoidCallback onEdit;
   final VoidCallback onShare;
   final VoidCallback onAbout;
 
-  const ProfileActions({
+  const ActionButtons({
     super.key,
     required this.onEdit,
     required this.onShare,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/action_button.dart';
+import '../widgets/action_buttons.dart';
 import '../widgets/profile_info.dart';
-import '../widgets/profile_photo.dart';
+import '../widgets/profile_header.dart';
 import '../widgets/socialmedia_row.dart';
 import 'about_screen.dart';
 
@@ -31,11 +31,12 @@ class ProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 24),
-              const ProfilePhoto(radius: 60),
-              const SizedBox(height: 24),
-              const ProfileInfo(
+              const ProfileHeader(
                 name: 'Eka Fajar Rahmadani',
                 nim: '25.11.6339',
+              ),
+              const SizedBox(height: 24),
+              const ProfileInfo(
                 programStudi: 'S1 Informatika',
                 email: 'e.fajar@students.amikom.ac.id',
                 lokasi: 'Yogyakarta, Indonesia',
@@ -43,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 20),
               const SocialMediaRow(),
               const SizedBox(height: 24),
-              ProfileActions(
+              ActionButtons(
                 onEdit: () {},
                 onShare: () {},
                 onAbout: () => _openAboutScreen(context),
